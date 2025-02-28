@@ -41,6 +41,6 @@ app.post('/',async (req,res)=>{
     res.render("index.ejs",{data: value});
 });
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log("Your Server is started at 3000.");
 });
