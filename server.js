@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import {  Secret } from "./secret.js";
 
 const app = express();
+const port = process.env.PORT || 4000;
 let result,value,icon_link;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -41,6 +42,6 @@ app.post('/',async (req,res)=>{
     res.render("index.ejs",{data: value});
 });
 
-app.listen(process.env.PORT || 3000,()=>{
+app.listen(port,()=>{
     console.log("Your Server is started at 3000.");
 });
